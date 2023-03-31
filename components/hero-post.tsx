@@ -1,17 +1,17 @@
-import Avatar from './avatar'
-import DateFormatter from './date-formatter'
-import CoverImage from './cover-image'
-import Link from 'next/link'
-import type Author from '../interfaces/author'
+import Avatar from "./avatar";
+import DateFormatter from "./date-formatter";
+import CoverImage from "./cover-image";
+import Link from "next/link";
+import type Author from "../interfaces/author";
 
 type Props = {
-  title: string
-  coverImage: string
-  date: string
-  excerpt: string
-  author: Author
-  slug: string
-}
+  title: string;
+  coverImage: string;
+  date: string;
+  excerpt?: string;
+  author?: Author;
+  slug: string;
+};
 
 const HeroPost = ({
   title,
@@ -30,8 +30,8 @@ const HeroPost = ({
         <div>
           <h3 className="mb-4 text-4xl lg:text-5xl leading-tight">
             <Link
-              as={`/posts/${slug}`}
-              href="/posts/[slug]"
+              as={`/articles/${slug}`}
+              href="/articles/[slug]"
               className="hover:underline"
             >
               {title}
@@ -41,13 +41,13 @@ const HeroPost = ({
             <DateFormatter dateString={date} />
           </div>
         </div>
-        <div>
+        {/* <div>
           <p className="text-lg leading-relaxed mb-4">{excerpt}</p>
           <Avatar name={author.name} picture={author.picture} />
-        </div>
+        </div> */}
       </div>
     </section>
-  )
-}
+  );
+};
 
-export default HeroPost
+export default HeroPost;
