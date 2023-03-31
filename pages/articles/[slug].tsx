@@ -26,28 +26,28 @@ export default function Post({ article, morearticles, preview }: Props) {
   }
   return (
     // <Layout preview={preview}>
-      <Container>
-        <Header />
-        {router.isFallback ? (
-          <PostTitle>Loading…</PostTitle>
-        ) : (
-          <>
-            <article className="mb-32">
-              <Head>
-                <title>{title}</title>
-                {/* <meta property="og:image" content={article.ogImage.url} /> */}
-              </Head>
-              <PostHeader
-                title={article.title}
-                coverImage={article.coverImage}
-                date={article.date}
-                author={article.author}
-              />
-              <PostBody content={article.content} />
-            </article>
-          </>
-        )}
-      </Container>
+    <Container>
+      {/* <Header /> */}
+      {router.isFallback ? (
+        <PostTitle>Loading…</PostTitle>
+      ) : (
+        <>
+          <article className="mb-32">
+            <Head>
+              <title>{title}</title>
+              {/* <meta property="og:image" content={article.ogImage.url} /> */}
+            </Head>
+            <PostHeader
+              title={article.title}
+              coverImage={article.coverImage}
+              date={article.date}
+              author={article.author}
+            />
+            <PostBody content={article.content} />
+          </article>
+        </>
+      )}
+    </Container>
     // </Layout>
   );
 }

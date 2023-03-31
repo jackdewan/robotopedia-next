@@ -6,10 +6,10 @@ import Layout from "../components/layout";
 import { getAllArticles } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
-import Post from "../interfaces/post";
+import ArticleType from "../interfaces/post";
 
 type Props = {
-  allArticles: Post[];
+  allArticles: ArticleType[];
 };
 
 export default function Index({ allArticles }: Props) {
@@ -22,7 +22,7 @@ export default function Index({ allArticles }: Props) {
         <title>{`Robotopedia: Industrial Robot and Automation Knowledge`}</title>
       </Head>
       <Container>
-        <Intro />
+        {/* <Intro /> */}
         {heroPost && (
           <HeroPost
             title={heroPost.title}
