@@ -18,9 +18,12 @@ const Layout = ({ preview, children }: Props) => {
         <header className="mb-10">
           <Container>
             <div className="flex justify-between items-center mb-2">
-              <div className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
+              <Link
+                href="/"
+                className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8"
+              >
                 Robotopedia
-              </div>
+              </Link>
               <Link
                 href="/articles"
                 className="hover:underline text-3xl md:text-2xl font-bold tracking-tighter leading-tight"
