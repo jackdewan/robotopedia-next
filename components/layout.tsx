@@ -17,25 +17,27 @@ const Layout = ({ preview, children }: Props) => {
       <div className="min-h-screen">
         <header className="mb-10">
           <Container>
-            <div className="flex justify-between items-center mb-2">
+            <div className="flex justify-between items-center mb-2 h-14">
               <Link
                 href="/"
-                className="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8"
+                className="text-2xl md:text-2xl font-bold tracking-tighter leading-tight md:pr-8"
               >
                 Robotopedia
               </Link>
               <Link
                 href="/articles"
-                className="hover:underline text-3xl md:text-2xl font-bold tracking-tighter leading-tight"
+                className="hover:underline md:text-2xl tracking-tighter leading-tight"
               >
                 Articles
               </Link>
             </div>
-            <div>
-              Sharing the world's knowledge on industrial robots and automation.
-            </div>
           </Container>
         </header>
+        {/* <Container>
+          <div>
+            Sharing the world's knowledge on industrial robots and automation.
+          </div>
+        </Container> */}
         {/* <Alert preview={preview} /> */}
         <main>{children}</main>
       </div>

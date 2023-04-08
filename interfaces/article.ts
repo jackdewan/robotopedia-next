@@ -1,11 +1,9 @@
-import type Author from "./author";
-
 type ArticleType = {
   slug: string;
   title: string;
-  date: string;
-  coverImage: string;
-  author: Author;
+  _firstPublishedAt: string;
+  _publishedAt: string;
+  coverImage: { url: string };
   excerpt: string;
   ogImage: {
     url: string;

@@ -1,10 +1,10 @@
 ---
 title: "The Transformative Power of Packaging Robots in Modern Manufacturing"
 excerpt: ""
-coverImage: "/assets/blog/hello-world/cover.jpg"
+coverImage: "/assets/images/packaging-robot-factory-1.jpeg"
 date: "2023-03-05T05:35:07.322Z"
 ogImage:
-  url: "/assets/blog/hello-world/cover.jpg"
+  url: "/assets/images/packaging-robot-factory-1.jpeg"
 ---
 
 In today's fast-paced manufacturing world, efficiency, accuracy, and cost-effectiveness are crucial to stay competitive. Packaging robots have emerged as a game-changing solution, transforming the way products are packaged and shipped across various industries.

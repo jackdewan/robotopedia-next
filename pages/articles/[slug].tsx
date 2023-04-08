@@ -10,7 +10,8 @@ import PostTitle from "../../components/post-title";
 import Head from "next/head";
 import { CMS_NAME } from "../../lib/constants";
 import markdownToHtml from "../../lib/markdownToHtml";
-import type ArticleType from "../../interfaces/post";
+import type ArticleType from "../../interfaces/article";
+import { request } from "../../lib/datocms";
 
 type Props = {
   article: ArticleType;
@@ -18,9 +19,30 @@ type Props = {
   preview?: boolean;
 };
 
+const GET_ALL_SLUGS_QUERY = `query {
+  allArticles(filter:{_status: {eq: published}}) {
+    slug
+  }
+}`;
+
+const GET_ARTICLE_BY_SLUG = `query GET_ARTICLE_BY_SLUG($slug: String) {
+  article(filter:{slug: { eq: $slug}}) {
+    title
+    markdown
+    slug
+    _publishedAt
+    coverImage {
+      url
+      alt
+    }
+  }
+}
+
+`;
+
 export default function Post({ article, morearticles, preview }: Props) {
   const router = useRouter();
-  const title = `${article.title} | Next.js Blog Example with ${CMS_NAME}`;
+  const title = `${article.title} | Robotopedia`;
   if (!router.isFallback && !article?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -39,9 +61,12 @@ export default function Post({ article, morearticles, preview }: Props) {
             </Head>
             <PostHeader
               title={article.title}
-              coverImage={article.coverImage}
-              date={article.date}
-              author={article.author}
+              coverImage={
+                article.coverImage
+                  ? article.coverImage.url
+                  : "/assets/blog/hello-world/cover.jpg"
+              }
+              date={article._publishedAt}
             />
             <PostBody content={article.content} />
           </article>
@@ -59,16 +84,14 @@ type Params = {
 };
 
 export async function getStaticProps({ params }: Params) {
-  const article = getArticleBySlug(params.slug, [
-    "title",
-    "date",
-    "slug",
-    "author",
-    "content",
-    "ogImage",
-    "coverImage",
-  ]);
-  const content = await markdownToHtml(article.content || "");
+  const { article } = await request({
+    query: GET_ARTICLE_BY_SLUG,
+    variables: { slug: params.slug },
+    includeDrafts: {},
+    excludeInvalid: {},
+  });
+
+  const content = await markdownToHtml(article.markdown || "");
 
   return {
     props: {
@@ -81,10 +104,15 @@ export async function getStaticProps({ params }: Params) {
 }
 
 export async function getStaticPaths() {
-  const articles = getAllArticles(["slug"]);
+  const { allArticles } = await request({
+    query: GET_ALL_SLUGS_QUERY,
+    variables: {},
+    includeDrafts: {},
+    excludeInvalid: {},
+  });
 
   return {
-    paths: articles.map((article) => {
+    paths: allArticles.map((article: { slug: string }) => {
       return {
         params: {
           slug: article.slug,

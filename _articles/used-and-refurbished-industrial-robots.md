@@ -1,5 +1,5 @@
 ---
-title: "The Ins and Outs of Refurbished Industrial Robots: A Comprehensiv Guide"
+title: "The Ins and Outs of Refurbished Industrial Robots: A Comprehensive Guide"
 excerpt: ""
 coverImage: "/assets/blog/hello-world/cover.jpg"
 date: "2023-04-03T05:35:07.322Z"

@@ -1,5 +1,5 @@
 ---
-title: "How Much Does an Industrial Robot Cost?"
+title: "How Much Do Industrial Robots Cost?"
 excerpt: ""
 coverImage: "/assets/blog/hello-world/cover.jpg"
 date: "2023-04-02T05:35:07.322Z"

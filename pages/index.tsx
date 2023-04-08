@@ -6,50 +6,66 @@ import Layout from "../components/layout";
 import { getAllArticles } from "../lib/api";
 import Head from "next/head";
 import { CMS_NAME } from "../lib/constants";
-import ArticleType from "../interfaces/post";
+import ArticleType from "../interfaces/article";
 
-type Props = {
+import { request } from "../lib/datocms";
+
+type IndexProps = {
   allArticles: ArticleType[];
 };
 
-export default function Index({ allArticles }: Props) {
+const HOMEPAGE_QUERY = `query HomePage {
+  allArticles(filter:{_status: {eq: published}}) {
+    id
+    title
+    _status
+    _firstPublishedAt
+    _publishedAt
+    slug
+    coverImage {
+      url
+      alt
+    }
+  }
+}`;
+
+export default function Index({ allArticles }: IndexProps) {
   const heroPost = allArticles[0];
-  const morearticles = allArticles.slice(1);
+  const moreArticles = allArticles.slice(1);
+  console.log(moreArticles);
   return (
     <>
-      {/* <Layout> */}
       <Head>
         <title>{`Robotopedia: Industrial Robot and Automation Knowledge`}</title>
       </Head>
       <Container>
-        {/* <Intro /> */}
+        <Intro />
         {heroPost && (
           <HeroPost
             title={heroPost.title}
-            coverImage={heroPost.coverImage}
-            date={heroPost.date}
-            // author={heroPost.author}
+            coverImage={
+              heroPost.coverImage
+                ? heroPost.coverImage.url
+                : "/assets/blog/hello-world/cover.jpg"
+            }
+            date={heroPost._firstPublishedAt}
             slug={heroPost.slug}
-            // excerpt={heroPost.excerpt}
           />
         )}
 
-        {morearticles.length > 0 && <MoreStories articles={morearticles} />}
+        {moreArticles.length > 0 && <MoreStories articles={moreArticles} />}
       </Container>
-      {/* </Layout> */}
     </>
   );
 }
 
 export const getStaticProps = async () => {
-  const allArticles = getAllArticles([
-    "title",
-    "date",
-    "slug",
-    "author",
-    "coverImage",
-    "excerpt",
-  ]);
+  const { allArticles } = await request({
+    query: HOMEPAGE_QUERY,
+    variables: { limit: 10 },
+    includeDrafts: {},
+    excludeInvalid: {},
+  });
 
   return {
     props: { allArticles },
