@@ -44,9 +44,9 @@ export default function Post({ article, morearticles, preview }: Props) {
   console.log(article);
   const router = useRouter();
   const title = `${article.title} | Robotopedia`;
-  if (!router.isFallback && !article?.slug) {
-    return <ErrorPage statusCode={404} />;
-  }
+  // if (!router.isFallback && !article?.slug) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
   return (
     // <Layout preview={preview}>
     <Container>
