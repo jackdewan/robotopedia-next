@@ -15,7 +15,7 @@ import { request } from "../../lib/datocms";
 
 type Props = {
   article: ArticleType;
-  morearticles: ArticleType[];
+  morearticles?: ArticleType[];
   preview?: boolean;
 };
 
@@ -44,9 +44,9 @@ export default function Post({ article, morearticles, preview }: Props) {
   console.log(article);
   const router = useRouter();
   const title = `${article.title} | Robotopedia`;
-  // if (!router.isFallback && !article?.slug) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
+  if (!router.isFallback && !article?.slug) {
+    return <ErrorPage statusCode={404} />;
+  }
   return (
     // <Layout preview={preview}>
     <Container>
@@ -120,6 +120,6 @@ export async function getStaticPaths() {
         },
       };
     }),
-    fallback: false,
+    fallback: true,
   };
 }
