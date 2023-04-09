@@ -32,7 +32,6 @@ const HOMEPAGE_QUERY = `query HomePage {
 export default function Index({ allArticles }: IndexProps) {
   const heroPost = allArticles[0];
   const moreArticles = allArticles.slice(1);
-  console.log(moreArticles);
   return (
     <>
       <Head>
