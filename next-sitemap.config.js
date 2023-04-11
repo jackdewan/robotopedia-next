@@ -1,7 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 module.exports = {
   siteUrl: "https://robotopedia.com",
-  generateRobotsTxt: false, // (optional)
+  generateRobotsTxt: true, // (optional)
   generateIndexSitemap: false,
   // ...other options
 };
