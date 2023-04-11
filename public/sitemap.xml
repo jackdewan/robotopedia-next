@@ -1,32 +1,18 @@
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!--
- created with Free Online Sitemap Generator www.xml-sitemaps.com 
--->
-<url>
-<loc>https://robotopedia.com/</loc>
-<lastmod>2023-03-31T04:04:01+00:00</lastmod>
-<priority>1.00</priority>
-</url>
-<url>
-<loc>https://robotopedia.com/articles</loc>
-<lastmod>2023-03-31T04:04:01+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>
-https://robotopedia.com/articles/pick-and-place-robots
-</loc>
-<lastmod>2023-03-31T04:04:01+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://robotopedia.com/articles/types-of-robots</loc>
-<lastmod>2023-03-31T04:04:01+00:00</lastmod>
-<priority>0.80</priority>
-</url>
-<url>
-<loc>https://robotopedia.com/articles/packaging-robots</loc>
-<lastmod>2023-03-31T04:04:01+00:00</lastmod>
-<priority>0.80</priority>
-</url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:news="http://www.google.com/schemas/sitemap-news/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml" xmlns:mobile="http://www.google.com/schemas/sitemap-mobile/1.0" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+<url><loc>https://robotopedia.com</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/robot-integrator</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/companies-that-use-robots</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/robot-manipulator</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/articulated-robots</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/packaging-robots</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/pick-and-place-robots</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/delta-robots-speed-precision-and-versatility-in-automation</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/scara-robots-a-guide-to-their-features-applications-and-top-manufacturers</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/the-ins-and-outs-of-refurbished-industrial-robots</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/types-of-robots</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/robot-costs</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/industrial-robot-cost</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
+<url><loc>https://robotopedia.com/articles/industrial-robots-return-on-investment</loc><lastmod>2023-04-11T18:48:18.882Z</lastmod><changefreq>daily</changefreq><priority>0.7</priority></url>
 </urlset>

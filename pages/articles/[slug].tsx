@@ -41,7 +41,6 @@ const GET_ARTICLE_BY_SLUG = `query GET_ARTICLE_BY_SLUG($slug: String) {
 `;
 
 export default function Post({ article, morearticles, preview }: Props) {
-  console.log(article);
   const router = useRouter();
   const title = `${article.title} | Robotopedia`;
   if (!router.isFallback && !article?.slug) {
