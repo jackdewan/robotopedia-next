@@ -33,7 +33,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
           function gtag(){window.dataLayer.push(arguments);}
           gtag('js', new Date());
 
-          gtag('config', ${gtag.GA_MEASUREMENT_ID});
+          gtag('config', '${gtag.GA_MEASUREMENT_ID}');
         `}
       </Script>
       <Layout>
