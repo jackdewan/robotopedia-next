@@ -14,8 +14,8 @@ type IndexProps = {
   allArticles: ArticleType[];
 };
 
-const HOMEPAGE_QUERY = `query HomePage {
-  allArticles(filter:{_status: {eq: published}}) {
+const HOMEPAGE_QUERY = `query HomePage($limit: IntType) {
+  allArticles(filter:{_status: {eq: published}}, first: $limit) {
     id
     title
     _status
