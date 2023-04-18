@@ -8,7 +8,7 @@ type ArticlesPageProps = {
 };
 
 const GET_ALL_ARTICLES = `query GET_ALL_ARTICLES {
-  allArticles(filter: {_status: { eq: published}}) {
+  allArticles(filter: {_status: { eq: published}}, first: 100) {
     title
     slug
     _publishedAt
