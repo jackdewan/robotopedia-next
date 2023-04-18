@@ -19,22 +19,20 @@ export default function MyApp({ Component, pageProps }: AppProps) {
 
   return (
     <>
-      <Head>
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
-        ></script>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
+      <Script
+        async
+        src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
+      />
+      <Script
+        dangerouslySetInnerHTML={{
+          __html: `
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', '${gtag.GA_MEASUREMENT_ID}');
         `,
-          }}
-        />
-      </Head>
+        }}
+      />
       <Layout>
         <Component {...pageProps} />
       </Layout>
