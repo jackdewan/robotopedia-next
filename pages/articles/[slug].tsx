@@ -20,7 +20,7 @@ type Props = {
 };
 
 const GET_ALL_SLUGS_QUERY = `query {
-  allArticles(filter:{_status: {eq: published}}) {
+  allArticles(filter:{_status: {eq: published}}, first: 100) {
     slug
   }
 }`;
