@@ -47,8 +47,10 @@ const GET_ARTICLE_BY_SLUG = `query GET_ARTICLE_BY_SLUG($slug: String) {
 export default function Post({ article, morearticles, preview }: Props) {
   const router = useRouter();
   const title = `${
-    article.seoSettings.title ? article.seoSettings.title : article.title
+    article?.seoSettings?.title ? article.seoSettings.title : article.title
   } | Robotopedia`;
+
+  console.log(title);
   if (!router.isFallback && !article?.slug) {
     return <ErrorPage statusCode={404} />;
   }
@@ -96,8 +98,6 @@ export async function getStaticProps({ params }: Params) {
     includeDrafts: {},
     excludeInvalid: {},
   });
-
-  console.log(article);
 
   const content = await markdownToHtml(article.markdown || "");
 
