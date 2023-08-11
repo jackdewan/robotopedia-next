@@ -8,6 +8,10 @@ type ArticleType = {
   ogImage: {
     url: string;
   };
+  seoSettings: {
+    description: string;
+    title: string;
+  };
   content: string;
 };
 
